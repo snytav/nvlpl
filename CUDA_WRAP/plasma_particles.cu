@@ -1431,7 +1431,7 @@ int CUDA_WRAP_write_plasma_value(int i,int num_attr,int n,double t)
 //writing a value to the control array for a definite particle in a definite cell
 __device__ int write_plasma_value(int i,int num_attr,int n,double *d_p,double t)
 {
-	//if (n > 0) return 0;
+	if (n > 0) return 0;
 
  //         d_p[200*40960]  = 10.0;
 //        cuPrintf(" i*num_attr +  n  %d \n", i*num_attr +  n   );	
