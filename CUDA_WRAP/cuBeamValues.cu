@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "labels.h"
 #include "cuParticles.h"
+#include "plasma_particles.h"
 
 #include <string>
 using namespace std;

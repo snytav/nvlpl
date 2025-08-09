@@ -41,6 +41,13 @@ __device__ double cuda_atomicAddP(double *address, double val)
     return old;
 }                                 
 
+CUDA_HOSTDEV int POSITION(int i,int n,int num_attr){
+
+	int pos = i*num_attr ;
+	return pos;
+}
+
+
 int create_h_plasma_particles(int Np)
 {
     if(first_h_plasma_values)

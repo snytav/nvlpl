@@ -1,7 +1,16 @@
 #ifndef CUDA_WRAP_PLASMA_PARTICLES_H
 #define CUDA_WRAP_PLASMA_PARTICLES_H
 
+#ifdef __CUDACC__
+#define CUDA_HOSTDEV __host__ __device__
+#else
+#define CUDA_HOSTDEV
+#endif
+
 #include "cuCell.h"
+
+CUDA_HOSTDEV int POSITION(int i,int n,int num_attr);
+
 
 int create_h_plasma_particles(int Np);
 
