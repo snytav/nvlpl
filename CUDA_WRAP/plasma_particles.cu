@@ -43,7 +43,11 @@ __device__ double cuda_atomicAddP(double *address, double val)
 
 CUDA_HOSTDEV int POSITION(int i,int n,int num_attr){
 
-	int pos = i*num_attr ;
+	int pos = i*num_attr  + n;
+	if (pos % num_attr == 0)
+	{
+	   printf("INTERSECT with attr %3d i %5d n %5d pos %10d \n",pos / num_attr ,i,n,pos);	
+	}
 	return pos;
 }
 
